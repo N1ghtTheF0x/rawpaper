@@ -3,4 +3,5 @@ project(rawpaper VERSION 0.1.0)
 
 set(WORKSPACE_DIR ${PROJECT_SOURCE_DIR} CACHE INTERNAL "WORKSPACE_DIR")
 
+add_subdirectory(woodfs)
 add_subdirectory(engine)

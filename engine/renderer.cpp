@@ -2,7 +2,12 @@
 
 namespace Paper
 {
-    PRenderer::PRenderer(PWindow &w): window(w)
+    PRenderer &PRenderer::getInstance()
+    {
+        static PRenderer instance;
+        return instance;
+    }
+    PRenderer::PRenderer()
     {
 
     }
@@ -21,4 +26,14 @@ namespace Paper
         
 #endif
     }
+#ifdef IS_WINDOWS
+    void PRenderer::setWindowsHRC(HGLRC hrc)
+    {
+        this->hrc = hrc;
+    }
+    HGLRC PRenderer::getWindowsHRC()
+    {
+        return hrc;
+    }
+#endif
 }

@@ -1,4 +1,9 @@
 *.exe
+*.dll
+*.pdb
 *.out
 *.app
 rawpaper
+
+Debug
+Release
