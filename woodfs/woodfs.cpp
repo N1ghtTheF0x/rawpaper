@@ -17,7 +17,7 @@ WoodFS* readFile(const char* path)
     std::ifstream file(path,std::ios::binary);
     if(!file.is_open()) throw "[woodfs] Couldn't open file!";
     WoodFS *woodfs;
-    file.read(reinterpret_cast<char*>(&woodfs->header),sizeof WoodFS::Header);
-    if(!checkHeader(woodfs->header.id)) throw "[woodfs] Header ID is invalid!";
-    
+    //file.read(reinterpret_cast<char*>(&woodfs->header),sizeof WoodFS::Header);
+    //if(!checkHeader(woodfs->header.id)) throw "[woodfs] Header ID is invalid!";
+    return woodfs;
 }

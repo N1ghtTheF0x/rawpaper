@@ -2,9 +2,12 @@
 #define PAPER_RENDERER
 
 #ifdef IS_LINUX
-    #include <GL/gl.h>
     #include <GL/glx.h>
-    #include <GL/glxext.h>
+    #include <GL/gl.h>
+    #include <GL/glu.h>
+    #include <X11/keysym.h>
+    #include <X11/Xlib.h>
+    #include <X11/Xutil.h>
 #endif
 
 #ifdef IS_WINDOWS
@@ -22,13 +25,27 @@ namespace Paper
     public:
         static PRenderer &getInstance();
 
-        void init();
+        void init(int x,int y,unsigned int width,unsigned int height);
+        void close();
+        void showWindow();
+        void hideWindow();
 #ifdef IS_LINUX
     private:
+        Display *dis;
+        int screen;
+        Window win;
+
         GLXFBConfig *fbconfig;
         GLXContext context;
         XVisualInfo *vi;
         Colormap cmap;
+
+        XEvent event;
+    public:
+        XEvent *getLinuxEvent();
+        Display &getLinuxDisplay();
+        int getLinuxScreen();
+        Window &getLinuxWindow();
 #endif
 #ifdef IS_WINDOWS
     private:

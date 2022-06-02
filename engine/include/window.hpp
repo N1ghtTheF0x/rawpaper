@@ -2,11 +2,9 @@
 #define PAPER_WINDOW
 
 #ifdef IS_LINUX
+    #include <X11/keysym.h>
     #include <X11/Xlib.h>
-    #include <X11/Xatom.h>
-    #include <X11/extensions/Xrender.h>
     #include <X11/Xutil.h>
-    #include <X11/Xos.h>
 #endif
 #ifdef IS_WINDOWS
     #include "pwin.hpp"
@@ -38,14 +36,14 @@ namespace Paper
 #ifdef IS_LINUX
     private:
         Display *dis = XOpenDisplay(NULL);
-        int screen = 0;
+        int screen = DefaultScreen(dis);
         Window win;
-        GC gc;
     public:
+        void create(int x,int y,unsigned int width,unsigned int height,XVisualInfo *vs,XSetWindowAttributes &swa);
+
         Display* getLinuxDisplay();
         int getLinuxScreen();
         Window* getLinuxWindow();
-        GC* getLinuxGC();
 #endif
 #ifdef IS_WINDOWS
     private:

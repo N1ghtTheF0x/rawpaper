@@ -1,14 +1,12 @@
-file(GLOB_RECURSE ENGINE_SOURCES "*.hpp" "*.cpp")
+file(GLOB_RECURSE ENGINE_CPP_FILES "src/${OS_NAME}/*.cpp")
+file(GLOB_RECURSE ENGINE_HPP_FILES "include/*.hpp")
 
-add_executable(engine ${ENGINE_SOURCES})
+add_library(engine SHARED ${ENGINE_CPP_FILES} ${ENGINE_HPP_FILES})
 
-set_target_properties(engine
-    PROPERTIES
-    ARCHIVE_OUTPUT_DIRECTORY "${WORKSPACE_DIR}/lib"
-    LIBRARY_OUTPUT_DIRECTORY "${WORKSPACE_DIR}/lib"
-    RUNTIME_OUTPUT_DIRECTORY "${WORKSPACE_DIR}/bin"
-    OUTPUT_NAME "rawpaper"
-)
+add_dependencies(engine putils)
+
+target_link_directories(engine PUBLIC ${WORKSPACE_DIR}/putils)
+target_link_libraries(engine PUBLIC putils)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     find_package(X11 REQUIRED)
