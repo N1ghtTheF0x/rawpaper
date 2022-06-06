@@ -68,4 +68,4 @@ for(const file of fileinfo)
     offset += file.fileSize
 }
 
-fs.writeFileSync(path.resolve(process.cwd(),output),buffer)
+fs.writeFileSync(path.resolve(process.cwd(),"..","bin",output),buffer)

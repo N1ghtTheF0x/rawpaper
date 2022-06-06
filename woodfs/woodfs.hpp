@@ -1,24 +1,28 @@
 #if !defined(WOODFS_HEADER)
 #define WOODFS_HEADER
 
-struct WoodFS
+namespace WoodFS
 {
     struct Header
     {
         char id[6]; // "WOODFS"
         unsigned long int fileCount;
     };
-    struct File
+    struct DataFile
     {
         unsigned long typeLength;
         char *type;
         unsigned long int fileSize;
         char *data;
     };
-    Header header;
-    File *files;
+    struct File
+    {
+        Header header;
+        DataFile *files;
+    };
+    
 };
 
-WoodFS* readFile(const char* path);
+WoodFS::File* readFile(const char* path);
 
 #endif

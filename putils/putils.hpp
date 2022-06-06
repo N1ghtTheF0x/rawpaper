@@ -14,7 +14,9 @@ namespace PUtils
         ~PException() throw();
         const char* what() const throw();
     };
-    #define THROW_PE(type,arg) throw PException(type,arg,__FILE__,__LINE__);
+    
 }
+
+#define THROW_PE(type,arg) throw PUtils::PException(type,arg,__FILE__,__LINE__);
 
 #endif

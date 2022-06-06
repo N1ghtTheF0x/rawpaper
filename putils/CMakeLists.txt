@@ -1,1 +1,2 @@
-add_library(putils SHARED putils.cpp putils.hpp)
+project(PUtils VERSION 1.0.0)
+add_library(putils STATIC putils.cpp putils.hpp)
