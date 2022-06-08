@@ -18,7 +18,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     message(STATUS "X11_LIBRARIES = ${X11_LIBRARIES}")
 
     target_include_directories(engine PUBLIC ${X11_INCLUDE_DIR})
-    target_link_libraries(engine PUBLIC ${X11_LIBRARIES} ${OPENGL_LIBRARAY} ${OPENGL_glx_LIBRARY})
+    target_link_libraries(engine PUBLIC ${X11_LIBRARIES} ${OPENGL_LIBRARIES})
     target_compile_definitions(engine PUBLIC "IS_LINUX")
 endif()
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")

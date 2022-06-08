@@ -2,9 +2,9 @@
 *.lo
 *.o
 *.obj
-
 *.so
 *.dylib
 *.dll
 *.lib
 *.pdb
+*.a

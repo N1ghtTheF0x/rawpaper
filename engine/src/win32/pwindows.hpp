@@ -7,7 +7,6 @@
 
 namespace Paper
 {
-    #define PWINDOWS_APPNAME "RawPaper Engine"
     struct PWindows
     {
         HINSTANCE hInstance;

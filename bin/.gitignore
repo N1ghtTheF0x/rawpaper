@@ -3,7 +3,9 @@
 *.pdb
 *.out
 *.app
+
 rawpaper
+cwoodfs
 
 Debug
 Release

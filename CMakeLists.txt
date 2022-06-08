@@ -24,6 +24,7 @@ endif()
 
 add_subdirectory(putils)
 add_subdirectory(woodfs)
+add_subdirectory(pscript)
 add_subdirectory(engine)
 
 add_executable(rawpaper main.cpp)

@@ -1,6 +1,10 @@
 #if !defined(PAPER_WINDOW)
 #define PAPER_WINDOW
 
+#define PAPER_APPNAME "RawPaper Engine"
+#define PAPER_WINDOW_WIDTH 640
+#define PAPER_WINDOW_HEIGHT 480
+
 namespace Paper
 {
     class PWindow
