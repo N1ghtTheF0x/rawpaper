@@ -2,15 +2,16 @@
 #define PUTILS_HEADER
 
 #include <stdexcept>
+#include <string>
 
 namespace PUtils
 {
     class PException : public std::runtime_error
     {
     private:
-        const char* msg;
+        std::string msg;
     public:
-        PException(const char* type,const char* msg,const char* file,int line);
+        PException(std::string type,std::string msg,std::string file,int line);
         ~PException() throw();
         const char* what() const throw();
     };

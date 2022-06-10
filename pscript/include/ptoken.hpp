@@ -10,15 +10,15 @@ namespace PScript
         LeftParan,RightParan,LeftBrace,RightBrace,
         Comma,Dot,Minus,Plus,Semicolon,Slash,Star,
 
-        Bang,BangEqual,
+        Invert,InvertEqual,
         Equal,EqualEqual,
         Greater,GreaterEqual,
-        Less,LessEqueal,
+        Less,LessEqual,
 
         Identifier,String,Number,
 
         And,Class,Else,False,Function,For,If,Null,Or,
-        Print,Return,Super,This,True,Var,WHile,EndOfFile
+        Print,Return,Super,This,True,Var,While,EndOfFile
     };
 
     class PToken
@@ -37,6 +37,7 @@ namespace PScript
     };
 
     typedef std::list<PToken> PTokens;
+    typedef std::map<std::string,PTokenType> PKeywords;
 }
 
 #endif

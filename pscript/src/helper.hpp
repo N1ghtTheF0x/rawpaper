@@ -5,5 +5,6 @@
 #include <sstream>
 #include <fstream>
 #include <list>
+#include <map>
 
 #endif

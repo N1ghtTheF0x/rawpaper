@@ -15,10 +15,20 @@ namespace PScript
         int current = 0;
         int line = 1;
         bool isAtEnd();
+        char peek();
+        char peekNext();
         void scanToken();
         char advance();
+        bool match(char);
+        bool isDigit(char);
+        bool isAlpha(char);
+        bool isAlphaNumberic(char);
         void addToken(PTokenType);
         void addToken(PTokenType,const void*);
+
+        void string();
+        void number();
+        void identifier();
     public:
         PScanner(std::string);
         PTokens scanTokens();
